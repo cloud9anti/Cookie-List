@@ -6,11 +6,11 @@ let nextCookie = 0;
 // POINTS GAME
 
 
-//load local storage
-
-clickValue = parseInt(localStorage.getItem("clickValue"));
-points = parseInt(localStorage.getItem("points"));
-
+//load session storage
+if (sessionStorage.length != 0) {
+    clickValue = parseInt(sessionStorage.getItem("clickValue"));
+    points = parseInt(sessionStorage.getItem("points"));
+}
 
 
 
@@ -216,10 +216,10 @@ let buyCookie = (cookieItem) => {
 
 
 let bonusCookies = () => {
-    //Update Local Storage
+    //Update session Storage
     
-    localStorage.setItem("clickValue", `${clickValue}`);
-    localStorage.setItem("points", `${points}`);
+    sessionStorage.setItem("clickValue", `${clickValue}`);
+    sessionStorage.setItem("points", `${points}`);
     
     getPoints();
 }
