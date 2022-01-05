@@ -6,6 +6,18 @@ let nextCookie = 0;
 // POINTS GAME
 
 
+//load local storage
+
+clickValue = parseInt(localStorage.getItem("clickValue"));
+points = parseInt(localStorage.getItem("points"));
+
+
+
+
+
+
+
+
 let rainbow = () => {
     let r = ''
     for (let i = 0; i < 7; i++) {
@@ -202,7 +214,13 @@ let buyCookie = (cookieItem) => {
 }
 
 
+
 let bonusCookies = () => {
+    //Update Local Storage
+    
+    localStorage.setItem("clickValue", `${clickValue}`);
+    localStorage.setItem("points", `${points}`);
+    
     getPoints();
 }
 setInterval(bonusCookies, 1000);
