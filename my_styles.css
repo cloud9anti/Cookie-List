@@ -1,0 +1,193 @@
+.r {
+    color: red;
+}
+.g {
+    color: green;
+}
+.b {
+    color:blue;
+}
+
+#cookiebutton {
+    width: 300px;
+    height: 300px;
+}
+
+.hiddenCookies {
+    background-color: #A8EDAC;
+    border-top: 4px solid black;
+    border-bottom: 4px solid black;
+    border-left: 4px solid black;
+    display: none;
+}
+
+
+.buttonarrow {
+    width:30px;
+    height:30px;
+}
+
+::selection {
+    background-color:orange;
+}
+
+button {
+    margin: 10px;
+    padding: 0;
+    background: transparent;
+    border: none !important;
+
+}
+
+
+.buttonsmall {
+    margin: 10px;
+    padding: 0;
+    background-color: cornflowerblue;
+    border: 3px solid purple !important;
+
+    transition: background-color .1s ease-out;
+    width: 85px;
+    height: 100px;
+}
+    button img {
+        border-radius: 16%;
+    }
+
+
+    .buttonsmall:hover {
+        transform: skewY(10deg);
+        transform: scale(1.2);
+        background-color: mediumpurple;
+        cursor: pointer;
+    }
+
+.buttomsmall:active {
+    width: 200px;
+    height: 300px;
+}
+
+button:hover {
+    border: solid 2px;
+    padding:0;
+    
+}
+
+.cookie {
+    text-align:center;
+    z-index:1;
+}
+
+@media (min-width:1000px) {
+    body {
+        background-color: ghostwhite;
+    }
+}
+
+body {
+    background-color:whitesmoke;
+}
+
+
+.flex-container {
+    padding-top: 18px;
+    border: 4px solid black;
+    border-radius: 8px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-left: 15%;
+    margin-right: 15%;
+    background: navajowhite;
+    transition: background-color .3s linear;
+
+    opacity:1;
+    position:static;
+}
+
+.flexbox-row {
+    display: flex;
+
+}
+
+.flex-container2 {
+
+    background: #C9E1F4;
+    flex: 1 0 auto;
+
+    
+}
+.gametitle {
+    background-color: yellowgreen;
+    padding:1px;
+    border: 6px solid black;
+    border-radius: 1%;
+}
+
+
+.flex-container3 {
+    min-width: 160px;
+    max-width: 160px;
+    background: #A8EDAC;
+    border-left: 4px solid black;
+    border-top: 4px solid black;
+    border-bottom: 4px solid black;
+}
+
+
+
+
+    .flex-container img {
+        border-radius: 28px;
+        transition: background-color .1s ease-out;
+    }
+
+        .flex-container img:hover {
+            transform: skewY(10deg);
+            transform: scale(1.2);
+            background-color: mediumpurple;
+            cursor:pointer;
+        }
+
+    .flex-container img:active {
+        width: 200px;
+        height: 300px;
+        
+    }
+
+.flex-container hr {
+    width: 100%;
+}
+
+
+
+.cookieList{
+    visibility: visible;
+}
+
+.cookieList2 {
+    opacity:0;
+    position:absolute;
+    visibility:hidden;
+}
+
+.cookieListHidden {
+    display: none;
+}
+@keyframes fadingaway {
+    0% {
+        opacity: 1;
+        height: auto;
+    }
+
+    90% {
+        opacity: 0;
+        height: auto;
+    }
+
+    100% {
+        opacity: 0;
+        height: 0;
+    }
+}
