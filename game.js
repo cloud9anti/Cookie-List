@@ -1,6 +1,6 @@
 // JavaScript source code
 
-let points = 9;
+let points = 1;
 let clickValue = 1;
 let nextCookie = 0;
 // POINTS GAME
