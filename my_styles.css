@@ -22,13 +22,13 @@
 
 0%  {
         transform: rotate(-5deg);
-        top: 15%;
+        top: 34%;
         left:42%;
     }
 
 50% {
     transform: rotate(30deg);
-    bottom: 10%;
+    top: 10%;
 }
 
 100% {
