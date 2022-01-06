@@ -8,13 +8,24 @@ let channel = 0;
 let ownedCookies = 0;
 let clickAmount = 0;
 
-let achievements = [0,0,0,0,0,0,0,0]
+let achievements = [0, 0, 0, 0, 0, 0, 0, 0];
 
 // POINTS GAME
 
 
 //unlock 1st achievement for playing
 document.querySelector("#achievement1").src = "images/star.png";
+
+//unlock 5th achievement for playing for a day
+setTimeout(function ach5 () {
+    document.querySelector("#achievement5").src = "images/star.png";
+    clickValue *= 1.2;
+    document.querySelector("#awardnotice").innerText = "Congratulations on earning achievement #5!";
+    achievements[4] = 1;
+    setTimeout(() => document.querySelector("#awardnotice").innerText = "", 10000);
+}, 1000 * 60 * 60 * 24);
+ach5();
+
 
 //load session storage
 if (sessionStorage.length != 0) {
