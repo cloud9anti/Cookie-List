@@ -24,7 +24,7 @@ setTimeout(function ach5 () {
     achievements[4] = 1;
     setTimeout(() => document.querySelector("#awardnotice").innerText = "", 10000);
 }, 1000 * 60 * 60 * 24);
-ach5();
+
 
 
 //load session storage
