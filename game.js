@@ -1,6 +1,6 @@
 // JavaScript source code
 
-let points = 0;
+let points = 9;
 let clickValue = 1;
 let nextCookie = 0;
 // POINTS GAME
@@ -8,8 +8,8 @@ let nextCookie = 0;
 
 //load session storage
 if (sessionStorage.length != 0) {
-    clickValue = parseInt(sessionStorage.getItem("clickValue"));
-    points = parseInt(sessionStorage.getItem("points"));
+    //clickValue = parseInt(sessionStorage.getItem("clickValue"));
+    //points = parseInt(sessionStorage.getItem("points"));
 }
 
 
