@@ -5,16 +5,22 @@ let clickValue = 1;
 let nextCookie = 0;
 let currentCookie = -1;
 let channel = 0;
+let ownedCookies = 0;
+let clickAmount = 0;
+
+let achievements = [0,0,0,0,0,0,0,0]
+
 // POINTS GAME
 
+
+//unlock 1st achievement for playing
+document.querySelector("#achievement1").src = "images/star.png";
 
 //load session storage
 if (sessionStorage.length != 0) {
     //clickValue = parseInt(sessionStorage.getItem("clickValue"));
     //points = parseInt(sessionStorage.getItem("points"));
 }
-
-
 
 
 
@@ -30,9 +36,38 @@ let getPoints = () => {
 
     points += clickValue;
 
+    //unlock 2nd achievement for clicking 1,000 times
+    if (clickAmount >= 1000 && achievements[1] === 0) {
+        document.querySelector("#achievement2").src = "images/star.png";
+        clickValue *= 1.1;
+        document.querySelector("#awardnotice").innerText = "Congratulations on earning achievement #2!";
+        setTimeout(() => document.querySelector("#awardnotice").innerText = "", 10000);
+        achievements[1] = 1;
+     
+
+    }
+
+    //unlock 6th achievement for clicking 100,000 times
+    if (clickAmount >= 100000 && achievements[5] === 0) {
+        document.querySelector("#achievement6").src = "images/star.png";
+        clickValue *= 1.1;
+        document.querySelector("#awardnotice").innerText = "Congratulations on earning achievement #6!";
+        setTimeout(() => document.querySelector("#awardnotice").innerText = "", 10000);
+        achievements[5] = 1;
+    }
+
+    //unlock 7th achievement for earning 1 Trillion jellies
+    if (points >= 1000000000000 && achievements[6] === 0) {
+        document.querySelector("#achievement7").src = "images/star.png";
+        clickValue *= 1.1;
+        document.querySelector("#awardnotice").innerText = "Congratulations on earning achievement #7!";
+        setTimeout(() => document.querySelector("#awardnotice").innerText = "", 10000);
+        achievements[6] = 1;
+    }
 
 
     //convert click value to string
+    clickValue = Math.floor(clickValue);
     let clickValueStr = clickValue.toString();
 
     if (clickValue >= 1000000000000) {
@@ -135,7 +170,7 @@ cookieItemList = [
     {
         cost: 2000000,
         used: 0,
-        addup: 8,
+        addup: 7,
         IDName: "#buy2000000",
         src: "cookies/cookie (8).png",
         color: "#ffd700",
@@ -255,6 +290,34 @@ let buyCookie = (cookieItem) => {
         cookieItem.used = 1;
         document.querySelector(cookieItem.IDName).style.opacity = ".5";
         nextCookie += 1;
+        ownedCookies += 1;
+
+        //unlock 3rd achievement for owning 7 cookies
+
+        if (ownedCookies === 7 && achievements[2] === 0) {
+            document.querySelector("#achievement3").src = "images/star.png";
+            clickValue *= 1.2;
+            document.querySelector("#awardnotice").innerText = "Congratulations on earning achievement #3!";
+            setTimeout(() => document.querySelector("#awardnotice").innerText = "", 10000);
+            achievements[2] = 1;
+        }
+        //unlock 4th achievement for owning 8 cookies
+        if (ownedCookies === 8 && achievements[3] === 0) {
+            document.querySelector("#achievement4").src = "images/star.png";
+            clickValue *= 1.5;
+            document.querySelector("#awardnotice").innerText = "Congratulations on earning achievement #4!";
+            setTimeout(() => document.querySelector("#awardnotice").innerText = "", 10000);
+            achievements[3] = 1;
+        }
+        //unlock 8th achievement for owning 16 cookies
+        if (ownedCookies === 16 && achievements[7] === 0) {
+            document.querySelector("#achievement8").src = "images/star.png";
+            clickValue *= 1.5;
+            document.querySelector("#awardnotice").innerText = "Congratulations on earning achievement #8!";
+            setTimeout(() => document.querySelector("#awardnotice").innerText = "", 10000);
+            achievements[7] = 1;
+        }
+
 
 
 
@@ -315,7 +378,10 @@ let bonusCookies = () => {
 }
 setInterval(bonusCookies, 1000);
 
-document.querySelector('#cookiebutton').addEventListener('click', getPoints);
+document.querySelector('#cookiebutton').addEventListener('click', () => {
+    getPoints();
+    clickAmount += 1;
+});
 document.querySelector('#tv').addEventListener('click', changeChannel);
 document.querySelector('#buy20').addEventListener('click', () => buyCookie(cookieItemList[0]));
 document.querySelector('#buy200').addEventListener('click', () => buyCookie(cookieItemList[1]));

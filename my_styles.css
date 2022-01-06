@@ -8,6 +8,9 @@
     color:chocolate;
 }
 
+
+
+
 .pointspopup {
     color: yellow;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -52,9 +55,8 @@
 .hiddenCookies {
     background-color: #A8EDAC;
     border-top: 4px solid black;
-    border-bottom: 4px solid black;
-    border-left: 4px solid black;
-    
+    border-bottom: 4px solid black;   
+    display:none;
 }
 
 
@@ -75,7 +77,15 @@ button {
 
 }
 
-
+.buttontiny {
+    margin: 10px;
+    padding: 0;
+    background-color: cornflowerblue;
+    border: 3px solid purple !important;
+    transition: background-color .1s ease-out;
+    width: 40px;
+    height: 40px;
+}
 .buttonsmall {
     margin: 10px;
     padding: 0;
@@ -179,8 +189,17 @@ body {
     border-left: 4px solid black;
     border-top: 4px solid black;
     border-bottom: 4px solid black;
+    flex-wrap: wrap;
 }
-
+.flex-container4 {
+    min-width: 90px;
+    max-width: 90px;
+    background: gold;
+    border-right: 4px solid black;
+    border-top: 4px solid black;
+    border-bottom: 4px solid black;
+    flex-wrap: wrap;
+}
 
 
 
@@ -236,4 +255,28 @@ body {
         opacity: 0;
         height: 0;
     }
+}
+
+
+
+.tooltiptext {
+    visibility: hidden;
+    max-width:240px;
+    width: 240px;
+    background-color: #4B0082;
+    color: #fff;
+    text-align: center;
+    border: 8px solid gold;
+    border-radius: 10px;
+    padding: 5px 0;
+    line-height: 20px;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 2;
+    top: 270px;
+    left: 100px;
+}
+
+.achievementbutton:hover .tooltiptext {
+    visibility: visible;
 }
