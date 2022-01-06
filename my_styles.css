@@ -1,11 +1,45 @@
 .r {
-    color: red;
+    color: yellow;
 }
 .g {
-    color: green;
+    color: dodgerblue;
 }
 .b {
-    color:blue;
+    color:chocolate;
+}
+
+.pointspopup {
+    color: yellow;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 34px;
+    position: absolute;
+    animation: rotate 10s linear;
+}
+
+@keyframes rotate {
+
+
+
+0%  {
+        transform: rotate(-5deg);
+        bottom: 430px;
+        left:42%;
+    }
+
+50% {
+    transform: rotate(30deg);
+    bottom: 850px;
+}
+
+100% {
+    transform: rotate(180deg);
+}
+}
+
+#cookieimage {
+    width: 220px;
+    height: 260px;
+    touch-action: manipulation;
 }
 
 #cookiebutton {
@@ -20,7 +54,7 @@
     border-top: 4px solid black;
     border-bottom: 4px solid black;
     border-left: 4px solid black;
-    display: none;
+    //display: none;
 }
 
 
@@ -52,7 +86,17 @@ button {
     width: 80px;
     height: 90px;
 }
-    button img {
+.buttonmedium {
+    margin: 1px;
+    padding: 0;
+    border: 8px solid black !important;
+    transition: background-color .1s ease-out;
+    width: 250px;
+    height: 200px;
+    border: 1px solid grey;
+    touch-action: manipulation;
+} 
+button img {
         border-radius: 16%;
     }
 

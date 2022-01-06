@@ -43,24 +43,31 @@
             <h1 class="gametitle">
                 Cookie Clicker 2: <span class="r">J</span><span class="g">e</span><span class="b">l</span><span class="r">l</span><span class="g">y </span><span class="b">R</span><span class="r">u</span><span class="g">s</span><span class="b">h</span>
             </h1>
-            <h5 style="margin:0px">Click the Cookie</h5>
+            <h5 style="margin:0px">Click the Cookie to earn Jellies so you can buy new cookies and TV channels.</h5>
             <br />
             <h3 style="margin:0px">Jellies: <span style="color:purple" id="cookiepoints">0</span></h3>
-            <button id="cookiebutton">
-                <img class="button" id="cookieimage" src="cookies/cookie (1).png " />
+            <button class="button">
+
+                <img class="buttonmedium" id="tv" src="images/static.gif" />
+                
             </button>
+            <button id="cookiebutton">
+                <img class="button" id="cookieimage" src="cookies/gingerbrave.png" />
+                <span class="pointspopup"></span>
+            </button>
+
             <p>Jellies per second: <span id="jps">1</span></p>
             <p>You can buy the next cookie in <span id="jellyleft">20</span> <span id="jellytime">seconds!</span></p>
 
             <div class="hiddenCookies">
                 <button id="buy2B">
                     <h5>Cost: 2B</h5>
-                    <img class="buttonsmall" src="images/question.png"/>
+                    <img class="buttonsmall" src="images/question.png" />
                 </button>
 
                 <button id="buy20B">
                     <h5>Cost: 20B</h5>
-                    <img class="buttonsmall" src="images/question.png"/>
+                    <img class="buttonsmall" src="images/question.png" />
                 </button>
 
                 <button id="buy200B">
