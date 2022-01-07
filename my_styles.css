@@ -25,13 +25,13 @@
 
 0%  {
         transform: rotate(-5deg);
-        top: 34%;
-        left:42%;
+        top: 20%;
+        left:660px;
     }
 
 50% {
     transform: rotate(30deg);
-    top: 10%;
+    top: 15%;
 }
 
 100% {
@@ -168,11 +168,9 @@ body {
 }
 
 .flex-container2 {
-
     background: #C9E1F4;
-    flex: 1 0 auto;
-
-    
+    /*flex: 1 0 auto;*/
+    flex:auto;
 }
 .gametitle {
     background-color: yellowgreen;
@@ -279,4 +277,32 @@ body {
 
 .achievementbutton:hover .tooltiptext {
     visibility: visible;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 800px) {
+    .flex-container3 {
+        /*flex-direction: row; 
+        min-width: 100px;
+        max-width: 100px;
+        max-height:200px;
+        min-height:200px;
+        background: black;
+        border-left: 4px solid black;
+        border-top: 4px solid black;
+        border-bottom: 4px solid black;
+        flex-wrap: wrap;
+            */
+    }
+
+}
+body {
+    height: 100vh;
+    overflow-y: hidden;
 }
