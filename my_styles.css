@@ -9,7 +9,17 @@
 }
 
 
+#petimage {
 
+    animation: fly 3s linear infinite alternate;
+    width: 192px;
+    height: 146px;
+}
+
+#cookietvpet {
+    display: flex;
+    justify-content: center;
+}
 
 .pointspopup {
     color: yellow;
@@ -19,19 +29,31 @@
     animation: rotate 10s linear;
 }
 
+
+@keyframes fly {
+
+    from {
+        transform: rotate(-20deg);
+        transform: translateY(10px);
+    }
+
+    to {
+        transform: rotate(15deg);
+    }
+}
+
 @keyframes rotate {
 
 
 
 0%  {
         transform: rotate(-5deg);
-        top: 20%;
-        left:660px;
+
     }
 
 50% {
     transform: rotate(30deg);
-    top: 15%;
+
 }
 
 100% {
@@ -46,8 +68,8 @@
 }
 
 #cookiebutton {
-    width: 300px;
-    height: 300px;
+    width: 280px;
+    height: 280px;
     touch-action: manipulation;
 }
 
@@ -57,6 +79,7 @@
     border-top: 4px solid black;
     border-bottom: 4px solid black;   
     display:none;
+    justify-content:center;
 }
 
 
@@ -78,16 +101,17 @@ button {
 }
 
 .buttontiny {
-    margin: 10px;
+    margin: 0px;
     padding: 0;
     background-color: cornflowerblue;
     border: 3px solid purple !important;
     transition: background-color .1s ease-out;
     width: 40px;
     height: 40px;
+    vertical-align:baseline;
 }
 .buttonsmall {
-    margin: 10px;
+    margin: 8px;
     padding: 0;
     background-color: cornflowerblue;
     border: 3px solid purple !important;
@@ -95,15 +119,15 @@ button {
     transition: background-color .1s ease-out;
     width: 80px;
     height: 90px;
+    vertical-align:super;
 }
 .buttonmedium {
     margin: 1px;
     padding: 0;
-    border: 8px solid black !important;
+    border: 10px solid black !important;
     transition: background-color .1s ease-out;
-    width: 250px;
-    height: 200px;
-    border: 1px solid grey;
+    width: 300px;
+    height: 260px;
     touch-action: manipulation;
 } 
 button img {
@@ -188,6 +212,7 @@ body {
     border-top: 4px solid black;
     border-bottom: 4px solid black;
     flex-wrap: wrap;
+    text-align: center;
 }
 .flex-container4 {
     min-width: 90px;
@@ -197,6 +222,7 @@ body {
     border-top: 4px solid black;
     border-bottom: 4px solid black;
     flex-wrap: wrap;
+    text-align:center;
 }
 
 
@@ -304,5 +330,5 @@ body {
 }
 body {
     height: 100vh;
-    overflow-y: hidden;
+    
 }

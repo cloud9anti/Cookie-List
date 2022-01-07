@@ -3,8 +3,9 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Site - Homepage</title>
-    
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="my_styles.css" rel="stylesheet" />
 
@@ -42,44 +43,54 @@
             <div>
                 <p style="font-size:13px"><b>Achievements</b></p>
 
-                <button class="achievementbutton" >
+                <button class="achievementbutton">
                     <span class="tooltiptext"> <span style="color:yellow; font-size:22px; line-height: 46px">Play The Game</span><br> Achieved simply by playing the game. 99.97% of players have earned this achievement. <br><br> <span style="color:gold">Reward: 1.0x JPS</span></span>
                     <img class="buttontiny" id="achievement1" src="images/question.png" />
                 </button>
 
                 <button class="achievementbutton">
                     <span class="tooltiptext"> <span style="color:yellow; font-size:22px; line-height: 46px">Click 1,000 times</span><br> Achieved by clicking the cookie 1,000 times. Does your finger hurt yet? <br><br> <span style="color:gold">Reward: 1.1x JPS</span></span>
-                    <img class="buttontiny"  id="achievement2" src="images/question.png" />
+                    <img class="buttontiny" id="achievement2" src="images/question.png" />
                 </button>
 
-                <button class="achievementbutton" >
+                <button class="achievementbutton">
                     <span class="tooltiptext"> <span style="color:yellow; font-size:22px; line-height: 46px">Lucky Number 7</span><br> Achieved by unlocking 7 cookies, which is one less than 8! <br><br> <span style="color:gold">Reward: 1.2x JPS</span></span>
                     <img class="buttontiny" id="achievement3" src="images/question.png" />
                 </button>
 
-                <button class="achievementbutton" >
+                <button class="achievementbutton">
                     <span class="tooltiptext"> <span style="color:yellow; font-size:22px; line-height: 46px">Cookie Surprise</span><br> Achieved by collecting 8 cookies. SURPRISE!!! <br><br> <span style="color:gold">Reward: 1.5x JPS</span></span>
                     <img class="buttontiny" id="achievement4" src="images/question.png" />
                 </button>
 
-                <button class="achievementbutton" >
+                <button class="achievementbutton">
                     <span class="tooltiptext"> <span style="color:yellow; font-size:22px; line-height: 46px">TV Addict</span><br> Achieved by playing for one day straight. Note: You are responsible for any injuries. <br><br> <span style="color:gold">Reward: 1.2x JPS</span></span>
                     <img class="buttontiny" id="achievement5" src="images/question.png" />
                 </button>
 
-                <button class="achievementbutton" >
-                    <span class="tooltiptext"> <span style="color:yellow; font-size:22px; line-height: 46px">Rite Of Passage</span><br> Achieved by clicking the cookie 100,000 times total. Carpal Tunnel is earned only by true cookie warriors. <br><br> <span style="color:gold">Reward: 1.1x JPS</span></span>
+                <button class="achievementbutton">
+                    <span class="tooltiptext"> <span style="color:yellow; font-size:22px; line-height: 46px">Rite Of Passage</span><br> Achieved by clicking the cookie 10,000 times total. Carpal Tunnel is earned only by true cookie warriors. <br><br> <span style="color:gold">Reward: 1.3x JPS</span></span>
                     <img class="buttontiny" id="achievement6" src="images/question.png" />
                 </button>
 
-                <button class="achievementbutton" >
+                <button class="achievementbutton">
                     <span class="tooltiptext"> <span style="color:yellow; font-size:22px; line-height: 46px">Cookie Trillionaire</span><br> Achieved by having more than 1 trillion jellies. You're probably the richest person out there! <br><br> <span style="color:gold">Reward: 1.1x JPS</span></span>
                     <img class="buttontiny" id="achievement7" src="images/question.png" />
                 </button>
 
-                <button class="achievementbutton" >
+                <button class="achievementbutton">
                     <span class="tooltiptext"> <span style="color:yellow; font-size:22px; line-height: 46px">Lord Of All Cookies</span><br> Achieved by unlocking every cookie and TV channel in the game. <br><br> <span style="color:gold">Reward: 1.5x JPS</span></span>
                     <img class="buttontiny" id="achievement8" src="images/question.png" />
+                </button>
+
+                <button class="achievementbutton">
+                    <span class="tooltiptext"> <span style="color:yellow; font-size:22px; line-height: 46px">Jump Scare!</span><br> ??? <br><br> <span style="color:gold">Reward: 1.1x JPS</span></span>
+                    <img class="buttontiny" id="achievement9" src="images/question.png" />
+                </button>
+
+                <button class="achievementbutton">
+                    <span class="tooltiptext"> <span style="color:yellow; font-size:22px; line-height: 46px">Cheater</span><br> Achieved by cheating. Enjoy the harsh penalty! <br><br> <span style="color:gold">Reward: .01x JPS</span></span>
+                    <img class="buttontiny" id="achievement10" src="images/question.png" />
                 </button>
 
             </div>
@@ -91,15 +102,23 @@
             <h5 style="margin:0px" id="awardnotice">Click the Cookie to earn Jellies so you can buy new cookies and TV channels.</h5>
             <br />
             <h3 style="margin:0px">Jellies: <span style="color:purple" id="cookiepoints">0</span></h3>
-            <button class="button">
+            
+            
+            <div id="cookietvpet">
+                <button class="button">
 
-                <img class="buttonmedium" id="tv" src="images/static.gif" />
+                    <img class="buttonmedium" id="tv" src="images/static.gif" />
 
-            </button>
-            <button id="cookiebutton">
-                <img class="button" id="cookieimage" src="cookies/gingerbrave.png" />
-                <span class="pointspopup"></span>
-            </button>
+                </button>
+                <button id="cookiebutton">
+                    <img class="button" id="cookieimage" src="cookies/gingerbrave.png" />
+                    <span class="pointspopup"></span>
+                </button>
+
+                <button>
+                    <img class="button" id="petimage" src="cookies/chocodrop.png" />
+                </button>
+            </div>
 
             <p>Jellies per second: <span id="jps">1</span></p>
             <p>You can buy the next cookie in <span id="jellyleft">20</span> <span id="jellytime">seconds!</span></p>
