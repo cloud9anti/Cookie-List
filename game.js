@@ -1,6 +1,6 @@
 // JavaScript source code
 
-let points = 0;
+let points = 1;
 let clickValue = 1;
 let nextCookie = 0;
 let currentCookie = -1;
@@ -239,7 +239,7 @@ cookieItemList = [
     {
         cost: 200000000000,
         used: 0,
-        addup: 7,
+        addup: 6,
         IDName: "#buy200B",
         src: "cookies/cookie (13).png",
         pet: "cookies/pet (13).png",
@@ -249,7 +249,7 @@ cookieItemList = [
     {
         cost: 2000000000000,
         used: 0,
-        addup: 7,
+        addup: 6,
         IDName: "#buy2T",
         src: "cookies/cookie (14).png",
         pet: "cookies/pet (14).png",
@@ -259,7 +259,7 @@ cookieItemList = [
     {
         cost: 20000000000000,
         used: 0,
-        addup: 7,
+        addup: 6,
         IDName: "#buy20T",
         src: "cookies/cookie (15).png",
         pet: "cookies/pet (15).png",
@@ -269,7 +269,7 @@ cookieItemList = [
     {
         cost: 200000000000000,
         used: 0,
-        addup: 7,
+        addup: 6,
         IDName: "#buy200T",
         src: "cookies/cookie (16).png",
         pet: "cookies/pet (16).png",
@@ -279,7 +279,7 @@ cookieItemList = [
     {
         cost: 2000000000000000,
         used: 0,
-        addup: 7,
+        addup: 6,
         IDName: "#buy2Q",
         src: "cookies/cookie (17).png",
         pet: "cookies/pet (17).png",
@@ -289,20 +289,40 @@ cookieItemList = [
     {
         cost: 20000000000000000,
         used: 0,
-        addup: 7,
+        addup: 5,
         IDName: "#buy20Q",
         src: "cookies/cookie (18).png",
         pet: "cookies/pet (18).png",
+        color: "skyblue",
+        gif: ["images/doublejellies.png", "images/jellies.gif", "images/shame.gif"]
+    },
+        {
+        cost: 200000000000000000,
+        used: 0,
+        addup: 5,
+        IDName: "#buy200Q",
+        src: "cookies/cookie (19).png",
+        pet: "cookies/pet (19).png",
+        color: "darkslateblue",
+        gif: ["images/trippy1.gif", "images/trippy2.gif", "images/trippy3.gif"]
+        },
+        {
+        cost: 2000000000000000000,
+        used: 0,
+        addup: 6,
+        IDName: "#buy2QI",
+        src: "cookies/cookie (20).png",
+        pet: "cookies/pet (20).png",
         color: "#C70039",
-        gif: ["images/trippy1.gif", "images/trippy2.gif", "images/win.png"]
+        gif: ["images/dragon1.gif", "images/dragon2.gif", "images/win.png"]
     },
     {
-        cost: 20000000000000000,
+        cost: 2000000000000000000,
         used: 0,
-        addup: 7,
-        IDName: "#buy20Q",
-        src: "cookies/cookie (18).png",
-        pet: "cookies/pet (18).png",
+        addup: 6,
+        IDName: "#buy200Q",
+        src: "cookies/cookie (19).png",
+        pet: "cookies/pet (19).png",
         color: "#C70039",
         gif: ["images/trippy1.gif", "images/trippy2.gif", "images/win.png"]
     },
@@ -339,8 +359,8 @@ let buyCookie = (cookieItem) => {
             setTimeout(() => document.querySelector("#awardnotice").innerText = "You can never have enough jellies... The sugar rush alone is worth all the clicking!", 10000);
             achievements[3] = 1;
         }
-        //unlock 8th achievement for owning 16 cookies
-        if (ownedCookies === 16 && achievements[7] === 0) {
+        //unlock 8th achievement for owning 18 cookies
+        if (ownedCookies === 18 && achievements[7] === 0) {
             document.querySelector("#achievement8").src = "images/star.png";
             clickValue *= 1.5;
             document.querySelector("#awardnotice").innerText = "Congratulations on earning achievement #8!";
@@ -366,6 +386,7 @@ let buyCookie = (cookieItem) => {
         document.querySelector("#petimage").src = cookieItem.pet;
         document.querySelector(".flex-container2").style.backgroundColor = cookieItem.color;
         document.querySelector("#tv").src = cookieItem.gif[0];
+        document.querySelector("#channeltext").innerHTML = "";
 
         // change the current cookie depending on the object index
         currentCookie = cookieItemList.indexOf(cookieItem);
@@ -380,10 +401,56 @@ let changeChannel = () => {
     setTimeout(function () {
         
         if (channel === 0) {
-            channel = 1;
+            // gamble for jellies
+            if (currentCookie === 15) {
+                if (Math.random() >= .5) {
+                    //WIN! Double jellies.
+                    points *= 2;
+                    channel = 1;
+
+       
+
+                } else {
+                    //Lose! Lose all jellies.
+                    points = 0;
+                    channel = 2;
+                }
+
+                //make TV unclickable for 10 minutes
+                document.querySelector("#tv").classList.add("unclickable");
+
+                // count down on screen for 10 minutes
+                let timeleft = 1 * 60 * 10;
+                const interval = setInterval(() => {
+                    if (timeleft > 0) {
+                        timeleft -= 1;
+                        document.querySelector("#channeltext").innerHTML = `TV privileges disabled for ${Math.floor(timeleft / 60) + 1} minute(s).`;
+                    } else {
+                        document.querySelector("#channeltext").innerHTML = "Don't lose your beans...";
+                        clearInterval(interval);
+                        
+                    }
+                    
+                }, 1000);
+
+                // enable tv again 
+                setTimeout(() => {
+                    document.querySelector("#tv").classList.remove("unclickable");
+                    channel = 0;
+                    document.querySelector("#tv").src = cookieItemList[currentCookie].gif[channel];
+                    
+
+                }, 1000 * 60 * 10);
+
+                
+                
+            } else {
+                channel = 1;
+            }
 
         } else if (channel === 1) {
             channel = 2;
+            
             //unlock 9th achievement for reaching the jumpscare
             if (currentCookie === 7 && achievements[8] === 0) {
                 document.querySelector("#achievement9").src = "images/star.png";
@@ -425,7 +492,10 @@ let cheatTimer = () => {
     setTimeout(() => recentClicks = clickAmount - recentClicks, 1000 * 60 * 60);
 
     if (achievements[9] === 0 && recentClicks >= 50000) {
-        document.querySelector("#achievement10").src = "images/skull.png";
+        for (let i = 1; i < 11; i++) {
+            document.querySelector(`#achievement${i}`).src = "images/skull.png";
+        }
+        document.querySelector("#achievement10").src = "images/star.png";
         clickValue *= .01;
         document.querySelector("#awardnotice").innerText = "Congratulations on earning achievement #10!";
         achievements[9] = 1;
@@ -461,4 +531,6 @@ document.querySelector('#buy20T').addEventListener('click', () => buyCookie(cook
 document.querySelector('#buy200T').addEventListener('click', () => buyCookie(cookieItemList[13]));
 document.querySelector('#buy2Q').addEventListener('click', () => buyCookie(cookieItemList[14]));
 document.querySelector('#buy20Q').addEventListener('click', () => buyCookie(cookieItemList[15]));
+document.querySelector('#buy200Q').addEventListener('click', () => buyCookie(cookieItemList[16]));
+document.querySelector('#buy2QI').addEventListener('click', () => buyCookie(cookieItemList[17]));
 

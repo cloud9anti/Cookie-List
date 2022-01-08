@@ -8,6 +8,15 @@
     color:chocolate;
 }
 
+p {
+    font-family: cursive;
+}
+
+
+
+.unclickable {
+    pointer-events: none;
+}
 
 #petimage {
 
@@ -26,19 +35,20 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 34px;
     position: absolute;
-    animation: rotate 10s linear;
+    animation: rotate 5s linear;
 }
 
 
 @keyframes fly {
 
     from {
-        transform: rotate(-20deg);
-        transform: translateY(10px);
+        transform: translateY(10px) rotate(-10deg);
+        
     }
 
     to {
-        transform: rotate(15deg);
+        transform: translateY(-10px) rotate(10deg);
+       
     }
 }
 
@@ -46,19 +56,13 @@
 
 
 
-0%  {
-        transform: rotate(-5deg);
-
+    from {
+        transform: translateY(0px) rotate(-2deg);
     }
 
-50% {
-    transform: rotate(30deg);
-
-}
-
-100% {
-    transform: rotate(180deg);
-}
+    to {
+        transform: translateY(-300px) rotate(30deg);
+    }
 }
 
 #cookieimage {
@@ -110,17 +114,23 @@ button {
     height: 40px;
     vertical-align:baseline;
 }
+
 .buttonsmall {
     margin: 8px;
     padding: 0;
     background-color: cornflowerblue;
-    border: 3px solid purple !important;
+    border: 2px solid yellow !important;
 
     transition: background-color .1s ease-out;
     width: 80px;
     height: 90px;
     vertical-align:super;
 }
+
+.goldframe {
+    border: 3px solid blue !important;
+}
+
 .buttonmedium {
     margin: 1px;
     padding: 0;
