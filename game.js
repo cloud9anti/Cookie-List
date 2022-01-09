@@ -1,6 +1,6 @@
 // JavaScript source code
 
-let points = 1;
+let points = 0;
 let clickValue = 1;
 let nextCookie = 0;
 let currentCookie = -1;
@@ -138,7 +138,7 @@ cookieItemList = [
     {
         cost: 20,
         used: 0,
-        addup: 3,
+        addup: 5,
         IDName: "#buy20",
         src: "cookies/cookie (5).png",
         pet: "cookies/pet (5).png",
@@ -188,7 +188,7 @@ cookieItemList = [
     {
         cost: 2000000,
         used: 0,
-        addup: 7,
+        addup: 5,
         IDName: "#buy2000000",
         src: "cookies/cookie (8).png",
         pet: "cookies/pet (8).png",
@@ -198,7 +198,7 @@ cookieItemList = [
     {
         cost: 20000000,
         used: 0,
-        addup: 7,
+        addup: 5,
         IDName: "#buy20000000",
         src: "cookies/cookie (9).png",
         pet: "cookies/pet (9).png",
@@ -208,7 +208,7 @@ cookieItemList = [
     {
         cost: 200000000,
         used: 0,
-        addup: 7,
+        addup: 5,
         IDName: "#buy200000000",
         src: "cookies/cookie (10).png",
         pet: "cookies/pet (10).png",
