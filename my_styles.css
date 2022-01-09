@@ -409,7 +409,7 @@ body {
     }
     .hiddenCookies {
         position: absolute;
-        transform: translateY(510px);
+        transform: translateY(590px) translateX(-115px);
         flex-wrap: wrap;
         flex-flow: row;
     }
@@ -417,7 +417,7 @@ body {
         font-size: 64px;
     }
     #message1 {
-        transform: translateY(500px) translateX(-120px);
+        transform: translateY(500px) translateX(-124px);
         position: absolute;
 
     }
@@ -425,6 +425,11 @@ body {
         transform: translateY(400px) translateX(-200px);
         position:absolute;
 
+    }
+
+    .hiddenCookies > button > .buttonsmall {
+        width:62px;
+        height:100px;
     }
 }
 body {
