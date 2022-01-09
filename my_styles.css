@@ -310,6 +310,15 @@ body {
     }
 }
 
+#achievementtitle {
+    transform: translateY(10px);
+    position: absolute;
+    color: yellow;
+    background-color: blue;
+    border-radius: 20%;
+    position: absolute;
+    transform: translateY(-24px) translateX(-43px);
+}
 
 
 .tooltiptext {
@@ -419,17 +428,22 @@ body {
     #message1 {
         transform: translateY(500px) translateX(-124px);
         position: absolute;
-
+        width: 260px;
     }
     #message2 {
         transform: translateY(400px) translateX(-200px);
         position:absolute;
+        width:400px;
 
     }
 
     .hiddenCookies > button > .buttonsmall {
         width:62px;
         height:100px;
+    }
+    #achievementtitle {
+        transform: translateY(-10px) translateX(-56px);
+        font-size:18px;
     }
 }
 body {
