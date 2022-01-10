@@ -1,6 +1,6 @@
 // JavaScript source code
 
-let points = 0;
+let points = 0009999999999999999999999999999999990;
 let clickValue = 1;
 let nextCookie = 0;
 let currentCookie = -1;
@@ -356,7 +356,7 @@ let buyCookie = (cookieItem) => {
             document.querySelector("#achievement4").src = "images/star.png";
             clickValue *= 1.5;
             document.querySelector("#awardnotice").innerText = "Congratulations on earning achievement #4!";
-            setTimeout(() => document.querySelector("#awardnotice").innerText = "You can never have enough jellies... The sugar rush alone is worth all the clicking!", 10000);
+            setTimeout(() => document.querySelector("#awardnotice").innerText = "The sugar rush from jellies is worth all the clicking!", 10000);
             achievements[3] = 1;
         }
         //unlock 8th achievement for owning 18 cookies
@@ -364,7 +364,7 @@ let buyCookie = (cookieItem) => {
             document.querySelector("#achievement8").src = "images/star.png";
             clickValue *= 1.5;
             document.querySelector("#awardnotice").innerText = "Congratulations on earning achievement #8!";
-            setTimeout(() => document.querySelector("#awardnotice").innerText = "Being a cookie sure is great! Too bad you'll never know...", 10000);
+            setTimeout(() => document.querySelector("#awardnotice").innerText = "Being a cookie is great! Too bad you'll never know...", 10000);
             achievements[7] = 1;
         }
 

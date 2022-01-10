@@ -12,6 +12,15 @@ p {
     font-family: cursive;
 }
 
+#flex-divide1 {
+    display: flex;
+    flex: 0 0 80%;
+}
+
+#flex-divide2 {
+    display: flex;
+    flex: 0 0 20%;
+}
 #message1 {
     padding: 3px;
     margin-right: 80px;
@@ -369,7 +378,8 @@ body {
         flex-wrap: wrap;
             */
 
-
+        max-width:none;
+        min-width:920px;
     }
 
 
@@ -382,23 +392,22 @@ body {
         text-align: center;
     }
     .buttontiny {
-        width: 80px;
-        height: 80px;
+        width: 40px;
+        height: 40px;
     }
     .buttonsmall {
         width:120px;
-        height:180px;
+        height:130px;
     }
     #cookieimage {
-        width: 440px;
-        height: 520px;
+        width: 400px;
+        height: 460px;
     }
     #tv {
-        width: 940px;
-        height: 780px;
+        width: 620px;
+        height: 720px;
         position: absolute;
-        transform: translateY(840px) translateX(-110px);
-        display: flex;
+        transform: translateY(940px) translateX(20px);
         justify-content: flex-start;
     }
     .navbar {
@@ -412,38 +421,53 @@ body {
         max-width:120px;
     }
     #channeltext {
-        transform: translateY(920px) translateX(340px);
-        font-size:40px;
+        transform: translateY(460px) translateX(240px);
+        font-size: 40px;
         white-space: nowrap;
     }
-    .hiddenCookies {
-        position: absolute;
-        transform: translateY(590px) translateX(-115px);
-        flex-wrap: wrap;
-        flex-flow: row;
-    }
+
     .pointspopup {
         font-size: 64px;
     }
     #message1 {
-        transform: translateY(500px) translateX(-124px);
+        transform: translateY(670px) translateX(-254px);
         position: absolute;
         width: 260px;
     }
     #message2 {
-        transform: translateY(400px) translateX(-200px);
+        transform: translateY(670px) translateX(0px);
         position:absolute;
         width:400px;
 
     }
 
     .hiddenCookies > button > .buttonsmall {
-        width:62px;
-        height:100px;
+        width:90px;
+        height:120px;
+        margin:0px;
     }
     #achievementtitle {
         transform: translateY(-10px) translateX(-56px);
         font-size:18px;
+    }
+    .flexbox-row {
+        display: block;
+    }
+    #flex-divide1 {
+        flex: 0 0 100%;
+    }
+    #flex-divide2 {
+        flex: 0 0 100%;
+        flex-direction:column;
+    }
+    .hiddenCookies {
+        transform: translateY(667px) translateX(-115px);
+        flex-flow: wrap;
+        position: absolute;
+        transform: translateY(667px) translateX(-115px);
+    }
+    #awardnotice {
+        width: 800px;
     }
 }
 body {
