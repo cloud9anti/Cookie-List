@@ -400,8 +400,8 @@ body {
         height:130px;
     }
     #cookieimage {
-        width: 400px;
-        height: 460px;
+        width: 300px;
+        height: 360px;
     }
     #tv {
         width: 600px;
@@ -421,7 +421,7 @@ body {
         max-width:120px;
     }
     #channeltext {
-        transform: translateY(460px) translateX(240px);
+        transform: translateY(420px) translateX(240px);
         font-size: 40px;
         white-space: nowrap;
     }
@@ -463,7 +463,7 @@ body {
     .hiddenCookies {
         flex-flow: wrap;
         position: absolute;
-        transform: translateY(639px) translateX(-115px);
+        transform: translateY(639px) translateX(-135px);
     }
     #awardnotice {
         width: 800px;

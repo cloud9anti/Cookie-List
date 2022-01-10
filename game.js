@@ -1,6 +1,6 @@
 // JavaScript source code
 
-let points = 0009999999999999999999999999999999990;
+let points = 0;
 let clickValue = 1;
 let nextCookie = 0;
 let currentCookie = -1;
