@@ -11,7 +11,9 @@ let recentClicks = 0;
 
 let achievements = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-
+if (localStorage.getItem("points") != null) {
+    points = parseInt(localStorage.getItem('points'));
+}
 // POINTS GAME
 
 
@@ -49,6 +51,9 @@ let rainbow = () => {
 let getPoints = () => {
 
     points += clickValue;
+
+    //save points every second
+    localStorage.setItem('points', points);
 
     //unlock 2nd achievement for clicking 1,000 times
     if (clickAmount >= 1000 && achievements[1] === 0) {
