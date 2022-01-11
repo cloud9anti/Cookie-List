@@ -1,4 +1,5 @@
 // JavaScript source code
+//localStorage.clear(); // for debugging
 
 let points = 0;
 let clickValue = 1;
@@ -8,10 +9,12 @@ let channel = 0;
 let ownedCookies = 0;
 let clickAmount = 0;
 let recentClicks = 0;
+let resetClickValue = 1;
+let ascend = 0;
 
 let achievements = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-//localStorage.clear(); // for debugging
+
 
 //Load points an clickValue information
 if (localStorage.getItem("points") != null) {
@@ -20,6 +23,7 @@ if (localStorage.getItem("points") != null) {
 if (localStorage.getItem("clickValue") != null) {
     clickValue = parseInt(localStorage.getItem('clickValue'));
 }
+
 //Load achievement information
 if (localStorage.getItem("achievements") != null) {
     achievements = JSON.parse (localStorage.getItem('achievements'));
@@ -34,6 +38,12 @@ if (localStorage.getItem("nextCookie") != null)  nextCookie= parseInt(localStora
 if (localStorage.getItem("currentCookie") != null)  currentCookie = parseInt(localStorage.getItem('currentCookie'));
 if (localStorage.getItem("ownedCookies") != null)  ownedCookies = parseInt(localStorage.getItem('ownedCookies'));
 if (localStorage.getItem("clickAmount") != null)  clickAmount = parseInt(localStorage.getItem('clickAmount'));
+if (localStorage.getItem("resetClickValue") != null)  resetClickValue = parseInt(localStorage.getItem('resetClickValue'));
+if (localStorage.getItem("ascend") != null) {
+    ascend = parseInt(localStorage.getItem('ascend'));
+
+}
+
 
 
 
@@ -47,6 +57,7 @@ document.querySelector("#achievement1").src = "images/star.png";
 setTimeout(function ach5 () {
     document.querySelector("#achievement5").src = "images/star.png";
     clickValue *= 1.2;
+    resetClickValue *=1.2;
     document.querySelector("#awardnotice").innerText = "Congratulations on earning achievement #5!";
     achievements[4] = 1;
     setTimeout(() => document.querySelector("#awardnotice").innerText = "Some experts say green jellies from cookie land are healthier than green beans.", 10000);
@@ -71,15 +82,16 @@ let getPoints = () => {
 
     points += clickValue;
 
+    //round to 2 decimal places
+    clickValue = +(Math.round(clickValue + "e+2")  + "e-2");
+    resetClickValue = +(Math.round(resetClickValue + "e+2")  + "e-2");
+
+
+
     //save points every second
-    localStorage.setItem('points', points);
-    localStorage.setItem('clickValue', clickValue);
-    localStorage.setItem('achievements', JSON.stringify(achievements));
-    localStorage.setItem('cookieItemList', JSON.stringify(cookieItemList));
-    localStorage.setItem('nextCookie', nextCookie);
-    localStorage.setItem('currentCookie', currentCookie);
-    localStorage.setItem('ownedCookies', ownedCookies);
-    localStorage.setItem('clickAmount', clickAmount);
+    save();
+
+
 
 
     
@@ -88,6 +100,7 @@ let getPoints = () => {
     if (clickAmount >= 1000 && achievements[1] === 0) {
         document.querySelector("#achievement2").src = "images/star.png";
         clickValue *= 1.1;
+        resetClickValue *= 1.1;
         document.querySelector("#awardnotice").innerText = "Congratulations on earning achievement #2!";
         setTimeout(() => document.querySelector("#awardnotice").innerText = "Don't eat cookies, they have feelings too!", 10000);
         achievements[1] = 1;
@@ -98,6 +111,7 @@ let getPoints = () => {
     if (clickAmount >= 10000 && achievements[5] === 0) {
         document.querySelector("#achievement6").src = "images/star.png";
         clickValue *= 1.3;
+        resetClickValue *= 1.3;
         document.querySelector("#awardnotice").innerText = "Congratulations on earning achievement #6!";
         setTimeout(() => document.querySelector("#awardnotice").innerText = "Nothing is sweeter than cookies, except jellies!", 10000);
         achievements[5] = 1;
@@ -107,6 +121,7 @@ let getPoints = () => {
     if (points >= 1000000000000 && achievements[6] === 0) {
         document.querySelector("#achievement7").src = "images/star.png";
         clickValue *= 1.1;
+        resetClickValue *= 1.1;
         document.querySelector("#awardnotice").innerText = "Congratulations on earning achievement #7!";
         setTimeout(() => document.querySelector("#awardnotice").innerText = "Keep on clicking! You're doing a great job! =)", 10000);
         achievements[6] = 1;
@@ -114,8 +129,7 @@ let getPoints = () => {
 
 
     //convert click value to string
-    clickValue = Math.floor(clickValue);
-    let clickValueStr = clickValue.toString();
+    let clickValueStr = Math.floor(clickValue).toString();
 
     if (clickValue >= 1000000000000) {
         clickValueStr = `${Math.floor(clickValue / 1000000000000)} T`;
@@ -307,8 +321,8 @@ cookieItemList = [
         IDName: "#buy200T",
         src: "cookies/cookie (16).png",
         pet: "cookies/pet (16).png",
-        color: "#eba311 ",
-        gif: ["images/hell1.gif", "images/hell2.gif", "images/hell3.gif"]
+        color: "darkslateblue",
+        gif: ["images/trippy1.gif", "images/trippy2.gif", "images/trippy3.gif"]
     },
     {
         cost: 2000000000000000,
@@ -323,7 +337,7 @@ cookieItemList = [
     {
         cost: 20000000000000000,
         used: 0,
-        addup: 5,
+        addup: 3,
         IDName: "#buy20Q",
         src: "cookies/cookie (18).png",
         pet: "cookies/pet (18).png",
@@ -333,12 +347,12 @@ cookieItemList = [
         {
         cost: 200000000000000000,
         used: 0,
-        addup: 5,
+        addup: 3,
         IDName: "#buy200Q",
         src: "cookies/cookie (19).png",
         pet: "cookies/pet (19).png",
-        color: "darkslateblue",
-        gif: ["images/trippy1.gif", "images/trippy2.gif", "images/trippy3.gif"]
+        color: "#eba311", 
+        gif: ["images/hell1.gif", "images/hell2.gif", "images/hell3.gif"]
         },
         {
         cost: 2000000000000000000,
@@ -398,6 +412,7 @@ let buyCookie = (cookieItem) => {
         if (ownedCookies === 7 && achievements[2] === 0) {
             document.querySelector("#achievement3").src = "images/star.png";
             clickValue *= 1.2;
+            resetClickValue *= 1.2;
             document.querySelector("#awardnotice").innerText = "Congratulations on earning achievement #3!";
             setTimeout(() => document.querySelector("#awardnotice").innerText = "No one knows how many jellies exist in the world, except the Lord of All Cookies!", 10000);
             achievements[2] = 1;
@@ -406,6 +421,7 @@ let buyCookie = (cookieItem) => {
         if (ownedCookies === 8 && achievements[3] === 0) {
             document.querySelector("#achievement4").src = "images/star.png";
             clickValue *= 1.5;
+            resetClickValue *= 1.5;
             document.querySelector("#awardnotice").innerText = "Congratulations on earning achievement #4!";
             setTimeout(() => document.querySelector("#awardnotice").innerText = "The sugar rush from jellies is worth all the clicking!", 10000);
             achievements[3] = 1;
@@ -414,6 +430,7 @@ let buyCookie = (cookieItem) => {
         if (ownedCookies === 18 && achievements[7] === 0) {
             document.querySelector("#achievement8").src = "images/star.png";
             clickValue *= 1.5;
+            resetClickValue *= 1.5;
             document.querySelector("#awardnotice").innerText = "Congratulations on earning achievement #8!";
             setTimeout(() => document.querySelector("#awardnotice").innerText = "Being a cookie is great! Too bad you'll never know...", 10000);
             achievements[7] = 1;
@@ -426,6 +443,9 @@ let buyCookie = (cookieItem) => {
         if (cookieItem.IDName === "#buy200000000") {
             document.querySelector(".hiddenCookies").style.display = "flex";
         }
+        // change text to explain demon cookie's ascension
+        let ascensionText=     +(Math.round(1+(.5/(ascend+1) + "e+2"))  + "e-2");
+        if (cookieItem.IDName === "#buy200T") document.querySelector("#awardnotice").innerText = `Demon Cookie's Pet will let you ascend and start over with a ${ascensionText}x bonus...`;
 
 
 
@@ -506,6 +526,7 @@ let changeChannel = () => {
             if (currentCookie === 7 && achievements[8] === 0) {
                 document.querySelector("#achievement9").src = "images/star.png";
                 clickValue *= 1.1;
+                resetClickValue *= 1.1;
                 document.querySelector("#awardnotice").innerText = "Congratulations on earning achievement #9!";
                 setTimeout(() => document.querySelector("#awardnotice").innerText = "Do you need a cookie hug?", 10000);
                 achievements[8] = 1;
@@ -524,9 +545,27 @@ let changeChannel = () => {
     }, 100);
 }
 
+let save = () => {
+    localStorage.setItem('points', points);
+    localStorage.setItem('clickValue', clickValue);
+    localStorage.setItem('ascend', ascend);
+    localStorage.setItem('resetClickValue', resetClickValue);
+    localStorage.setItem('achievements', JSON.stringify(achievements));
+    localStorage.setItem('cookieItemList', JSON.stringify(cookieItemList));
+    localStorage.setItem('nextCookie', nextCookie);
+    localStorage.setItem('currentCookie', currentCookie);
+    localStorage.setItem('ownedCookies', ownedCookies);
+    localStorage.setItem('clickAmount', clickAmount);
+}
 
 let bonusCookies = () => {
-    //Update session Storage
+    //Update stats
+
+    document.querySelector("#stats").innerHTML=`
+    <div>Cookies: ${ownedCookies}</div><div>Total Clicks: ${clickAmount}</div><div>Channels: ${ownedCookies*3}</div><div>Ascensions: ${ascend}</div>
+    <br/><div>Bonus: ${resetClickValue}x</div>
+
+    `;
     
     
     getPoints();
@@ -546,6 +585,7 @@ let cheatTimer = () => {
         }
         document.querySelector("#achievement10").src = "images/star.png";
         clickValue *= .01;
+        resetClickValue *= .01;
         document.querySelector("#awardnotice").innerText = "Congratulations on earning achievement #10!";
         achievements[9] = 1;
         achievements = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
@@ -562,6 +602,28 @@ setInterval(cheatTimer, 1000 * 60 * 20); // every 20 min
 document.querySelector('#cookiebutton').addEventListener('click', () => {
     getPoints();
     clickAmount += 1;
+});
+document.querySelector('#petbutton').addEventListener('click', () => {
+    if (currentCookie === 13) {
+    //reset and ascend
+    ascend+=1;
+    points = 0;
+    nextCookie = 0;
+    currentCookie = 0;
+    ownedCookies = 0;
+    points = 999999999999988999;
+    currentCookie = -1;
+    resetClickValue*= (1+(.5/(ascend+1)));
+
+    clickValue = resetClickValue;
+
+    for (let i of cookieItemList) i.used=0;
+    save();
+    console.log(resetClickValue);
+    //refresh the page
+    location.reload();
+    }
+
 });
 document.querySelector('#tv').addEventListener('click', changeChannel);
 document.querySelector('#buy20').addEventListener('click', () => buyCookie(cookieItemList[0]));
