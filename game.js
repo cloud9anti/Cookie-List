@@ -11,9 +11,32 @@ let recentClicks = 0;
 
 let achievements = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
+//localStorage.clear(); // for debugging
+
+//Load points an clickValue information
 if (localStorage.getItem("points") != null) {
     points = parseInt(localStorage.getItem('points'));
 }
+if (localStorage.getItem("clickValue") != null) {
+    clickValue = parseInt(localStorage.getItem('clickValue'));
+}
+//Load achievement information
+if (localStorage.getItem("achievements") != null) {
+    achievements = JSON.parse (localStorage.getItem('achievements'));
+    for (let i in achievements) {
+        if (achievements[i]) document.querySelector(`#achievement${i}`).src = "images/star.png";
+        
+	}
+}
+
+//Load extra information
+if (localStorage.getItem("nextCookie") != null)  nextCookie= parseInt(localStorage.getItem('nextCookie'));
+if (localStorage.getItem("currentCookie") != null)  currentCookie = parseInt(localStorage.getItem('currentCookie'));
+if (localStorage.getItem("ownedCookies") != null)  ownedCookies = parseInt(localStorage.getItem('ownedCookies'));
+if (localStorage.getItem("clickAmount") != null)  clickAmount = parseInt(localStorage.getItem('clickAmount'));
+
+
+
 // POINTS GAME
 
 
@@ -32,11 +55,7 @@ setTimeout(function ach5 () {
   
 
 
-//load session storage
-if (sessionStorage.length != 0) {
-    //clickValue = parseInt(sessionStorage.getItem("clickValue"));
-    //points = parseInt(sessionStorage.getItem("points"));
-}
+
 
 
 
@@ -54,6 +73,16 @@ let getPoints = () => {
 
     //save points every second
     localStorage.setItem('points', points);
+    localStorage.setItem('clickValue', clickValue);
+    localStorage.setItem('achievements', JSON.stringify(achievements));
+    localStorage.setItem('cookieItemList', JSON.stringify(cookieItemList));
+    localStorage.setItem('nextCookie', nextCookie);
+    localStorage.setItem('currentCookie', currentCookie);
+    localStorage.setItem('ownedCookies', ownedCookies);
+    localStorage.setItem('clickAmount', clickAmount);
+
+
+    
 
     //unlock 2nd achievement for clicking 1,000 times
     if (clickAmount >= 1000 && achievements[1] === 0) {
@@ -330,13 +359,30 @@ cookieItemList = [
         pet: "cookies/pet (19).png",
         color: "#C70039",
         gif: ["images/trippy1.gif", "images/trippy2.gif", "images/win.png"]
-    },
+    }
     ];
+
+
+    //Load obtained cookies information and update the interface
+if (localStorage.getItem("cookieItemList") != null) {
+    cookieItemList = JSON.parse (localStorage.getItem('cookieItemList'));
+    for (let i in cookieItemList) {
+        if (cookieItemList[i].used) {
+            //update the cookie image
+            document.querySelector(`${cookieItemList[i].IDName}`).getElementsByTagName("img")[0].src = cookieItemList[i].src;
+            //update the image opacity
+            document.querySelector(`${cookieItemList[i].IDName}`).style.opacity = ".6";
+            //ensure the hidden bar is revealed after hello kitty is purchased
+            if (cookieItemList[i].IDName === "#buy200000000") {
+                document.querySelector(".hiddenCookies").style.display = "flex";
+            }
+         }
+	}
+}
 let buyCookie = (cookieItem) => {
     //Unlock cookie images, remove question mark
-    for (let cookieItem of cookieItemList) {
-        if (points * 20 >= cookieItem.cost) document.querySelector(cookieItem.IDName).getElementsByTagName("img")[0].src = cookieItem.src;
-    }
+
+    if (points * 10 >= cookieItemList[nextCookie].cost) document.querySelector(cookieItemList[nextCookie].IDName).getElementsByTagName("img")[0].src = cookieItemList[nextCookie].src;
 
     if (!cookieItem.used && cookieItem.cost <= points ) {
         points -= cookieItem.cost;
@@ -482,8 +528,6 @@ let changeChannel = () => {
 let bonusCookies = () => {
     //Update session Storage
     
-    sessionStorage.setItem("clickValue", `${clickValue}`);
-    sessionStorage.setItem("points", `${points}`);
     
     getPoints();
 }
@@ -491,12 +535,12 @@ setInterval(bonusCookies, 1000);
 
 
 //unlock 10th achievement for cheating
-//check every hour to see if the user clicked 50,000 times.
+//check every 20m to see if the user clicked 30,000 times.
 let cheatTimer = () => {
     recentClicks = clickAmount;
-    setTimeout(() => recentClicks = clickAmount - recentClicks, 1000 * 60 * 60);
+    setTimeout(() => recentClicks = clickAmount - recentClicks, 1000 * 60 * 20); // every 20 min
 
-    if (achievements[9] === 0 && recentClicks >= 50000) {
+    if (achievements[9] === 0 && recentClicks >= 30000) {
         for (let i = 1; i < 11; i++) {
             document.querySelector(`#achievement${i}`).src = "images/skull.png";
         }
@@ -510,7 +554,7 @@ let cheatTimer = () => {
     }
 
 }
-setInterval(cheatTimer, 1000 * 60 * 60);
+setInterval(cheatTimer, 1000 * 60 * 20); // every 20 min
 
 
        
