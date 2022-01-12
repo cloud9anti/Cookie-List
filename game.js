@@ -26,9 +26,9 @@ if (localStorage.getItem("clickValue") != null) {
 //Load achievement information
 if (localStorage.getItem("achievements") != null) {
     achievements = JSON.parse (localStorage.getItem('achievements'));
-    for (let i in achievements) {
-        if (achievements[i]) document.querySelector(`#achievement${i}`).src = "images/star.png";
-        
+    for (let i of achievements) {
+        if (achievements[i]) document.querySelector(`#achievement${i+1}`).src = "images/star.png";
+        console.log(i);
 	}
 }
 
@@ -37,7 +37,7 @@ if (localStorage.getItem("nextCookie") != null)  nextCookie= parseInt(localStora
 if (localStorage.getItem("currentCookie") != null)  currentCookie = parseInt(localStorage.getItem('currentCookie'));
 if (localStorage.getItem("ownedCookies") != null)  ownedCookies = parseInt(localStorage.getItem('ownedCookies'));
 if (localStorage.getItem("clickAmount") != null)  clickAmount = parseInt(localStorage.getItem('clickAmount'));
-if (localStorage.getItem("resetClickValue") != null)  resetClickValue = parseInt(localStorage.getItem('resetClickValue'));
+if (localStorage.getItem("resetClickValue") != null)  resetClickValue = parseFloat(localStorage.getItem('resetClickValue'));
 if (localStorage.getItem("ascend") != null) {
     ascend = parseInt(localStorage.getItem('ascend'));
 
@@ -81,14 +81,20 @@ let getPoints = () => {
 
     points += clickValue;
 
+
+
     //round to 2 decimal places
     clickValue = +(Math.round(clickValue + "e+2")  + "e-2");
+
     resetClickValue = +(Math.round(resetClickValue + "e+2")  + "e-2");
 
-
+    //hardcoded, delete
+    if (resetClickValue <2.18) resetClickValue = 2.18; 
 
     //save points every second
     save();
+
+
 
 
 
@@ -422,7 +428,7 @@ let buyCookie = (cookieItem) => {
             clickValue *= 1.5;
             resetClickValue *= 1.5;
             document.querySelector("#awardnotice").innerText = "Congratulations on earning achievement #4!";
-            setTimeout(() => document.querySelector("#awardnotice").innerText = "The sugar rush from jellies is worth all the clicking!", 10000);
+            setTimeout(() => document.querySelector("#awardnotice").innerText = "Congratulations! You finished the tutorial.", 10000);
             achievements[3] = 1;
         }
         //unlock 8th achievement for owning 18 cookies
@@ -548,7 +554,7 @@ let save = () => {
     localStorage.setItem('points', points);
     localStorage.setItem('clickValue', clickValue);
     localStorage.setItem('ascend', ascend);
-    localStorage.setItem('resetClickValue', resetClickValue);
+    localStorage.setItem('resetClickValue', JSON.stringify(resetClickValue));
     localStorage.setItem('achievements', JSON.stringify(achievements));
     localStorage.setItem('cookieItemList', JSON.stringify(cookieItemList));
     localStorage.setItem('nextCookie', nextCookie);
@@ -620,6 +626,7 @@ document.querySelector('#petbutton').addEventListener('click', () => {
     save();
     console.log(resetClickValue);
     //refresh the page
+
     location.reload();
     }
 
