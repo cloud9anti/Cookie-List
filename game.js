@@ -383,10 +383,11 @@ cookieItemList = [
     //Load obtained cookies information and update the interface
 if (localStorage.getItem("cookieItemList") != null) {
     cookieItemList = JSON.parse (localStorage.getItem('cookieItemList'));
-    for (let i in cookieItemList) {
+    for (let i=0; i<cookieItemList.length -1; i++) {
         if (cookieItemList[i].used) {
-            //update the cookie image
+            //update the cookie image and the one directly after.
             document.querySelector(`${cookieItemList[i].IDName}`).getElementsByTagName("img")[0].src = cookieItemList[i].src;
+           document.querySelector(`${cookieItemList[i+1].IDName}`).getElementsByTagName("img")[0].src = cookieItemList[i+1].src;
             //update the image opacity
             document.querySelector(`${cookieItemList[i].IDName}`).style.opacity = ".6";
             //ensure the hidden bar is revealed after hello kitty is purchased
@@ -402,13 +403,14 @@ let buyCookie = (cookieItem) => {
 
     if (!cookieItem.used && cookieItem.cost <= points ) {
         //show next cookie
+                
         document.querySelector(cookieItemList[nextCookie+1].IDName).getElementsByTagName("img")[0].src = cookieItemList[nextCookie+1].src;
         points -= cookieItem.cost;
         clickValue *= cookieItem.addup;
         document.querySelector("#cookiepoints").innerText = points.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         cookieItem.used = 1;
         document.querySelector(cookieItem.IDName).style.opacity = ".5";
-        nextCookie += 1;
+        nextCookie +=1;
         ownedCookies += 1;
 
         //unlock 3rd achievement for owning 7 cookies
