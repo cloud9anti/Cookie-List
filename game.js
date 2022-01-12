@@ -88,8 +88,6 @@ let getPoints = () => {
 
     resetClickValue = +(Math.round(resetClickValue + "e+2")  + "e-2");
 
-    //hardcoded, delete
-    if (resetClickValue <2.18) resetClickValue = 2.18; 
 
     //save points every second
     save();
