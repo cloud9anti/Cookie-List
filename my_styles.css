@@ -365,6 +365,11 @@ body {
 
 
 @media (max-width: 800px) {
+
+     .navbar {
+         width: 800px;
+         /*display:none;*/
+     }
     .flex-container3 {
         /*flex-direction: row; 
         min-width: 100px;
@@ -410,9 +415,7 @@ body {
         transform: translateY(940px) translateX(24px);
         justify-content: flex-start;
     }
-    .navbar {
-        display:none;
-    }
+
     body {
         background-color:darkmagenta;
     }
