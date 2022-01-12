@@ -1,6 +1,6 @@
 // JavaScript source code
 
-let points = 0;
+let points = 9999999999999999990;
 let clickValue = 1;
 let nextCookie = 0;
 let currentCookie = -1;
@@ -26,9 +26,8 @@ if (localStorage.getItem("clickValue") != null) {
 //Load achievement information
 if (localStorage.getItem("achievements") != null) {
     achievements = JSON.parse (localStorage.getItem('achievements'));
-    for (let i of achievements) {
+    for (let i=0;i<achievements.length;i++) {
         if (achievements[i]) document.querySelector(`#achievement${i+1}`).src = "images/star.png";
-        console.log(i);
 	}
 }
 
