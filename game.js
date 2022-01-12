@@ -398,10 +398,11 @@ if (localStorage.getItem("cookieItemList") != null) {
 }
 let buyCookie = (cookieItem) => {
     //Unlock cookie images, remove question mark
-
-    if (points * 10 >= cookieItemList[nextCookie].cost) document.querySelector(cookieItemList[nextCookie].IDName).getElementsByTagName("img")[0].src = cookieItemList[nextCookie].src;
+    
 
     if (!cookieItem.used && cookieItem.cost <= points ) {
+        //show next cookie
+        document.querySelector(cookieItemList[nextCookie+1].IDName).getElementsByTagName("img")[0].src = cookieItemList[nextCookie+1].src;
         points -= cookieItem.cost;
         clickValue *= cookieItem.addup;
         document.querySelector("#cookiepoints").innerText = points.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
