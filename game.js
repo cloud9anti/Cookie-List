@@ -615,7 +615,6 @@ document.querySelector('#petbutton').addEventListener('click', () => {
     nextCookie = 0;
     currentCookie = 0;
     ownedCookies = 0;
-    points = 999999999999988999;
     currentCookie = -1;
     resetClickValue*= (1+(.5/(ascend+1)));
 
