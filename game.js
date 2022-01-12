@@ -1,5 +1,4 @@
 // JavaScript source code
-//localStorage.clear(); // for debugging
 
 let points = 0;
 let clickValue = 1;
@@ -624,6 +623,10 @@ document.querySelector('#petbutton').addEventListener('click', () => {
     location.reload();
     }
 
+});
+document.querySelector('#reset').addEventListener('click', () => {
+    localStorage.clear(); // for debugging
+    location.reload();
 });
 document.querySelector('#tv').addEventListener('click', changeChannel);
 document.querySelector('#buy20').addEventListener('click', () => buyCookie(cookieItemList[0]));

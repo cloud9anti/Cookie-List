@@ -142,8 +142,8 @@ button {
     background-color: cornflowerblue;
     border: 3px solid purple !important;
     transition: background-color .1s ease-out;
-    width: 37px;
-    height: 37px;
+    width: 39px;
+    height: 39px;
     vertical-align:baseline;
 }
 
@@ -463,7 +463,7 @@ body {
     .hiddenCookies {
         flex-flow: wrap;
         position: absolute;
-        transform: translateY(639px) translateX(-135px);
+        transform: translateY(689px) translateX(-135px);
     }
     #awardnotice {
         width: 800px;
