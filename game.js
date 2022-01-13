@@ -193,7 +193,7 @@ cookieItemList = [
         src: "cookies/cookie (5).png",
         pet: "cookies/pet (5).png",
         color: "pink",
-        gif: ["images/birthday1.gif", "images/birthday2.gif", "images/birthday3.gif"]
+        gif: ["images/birthday1.gif", "images/birthday2.gif", "images/birthday3.gif","images/birthday4.gif"]
     },
     {
         cost: 200,
@@ -203,7 +203,7 @@ cookieItemList = [
         src: "cookies/cookie (3).png",
         pet: "cookies/pet (3).png",
         color: "sandybrown",
-        gif: ["images/newspaper1.gif", "images/newspaper2.gif", "images/newspaper3.gif"]
+        gif: ["images/newspaper1.gif", "images/newspaper2.gif", "images/newspaper3.gif","images/newspaper4.gif"]
     },
     {
         cost: 2000,
@@ -213,7 +213,7 @@ cookieItemList = [
         src: "cookies/cookie (4).png",
         pet: "cookies/pet (4).png",
         color: "#f08080",
-        gif: ["images/snow1.gif", "images/snow2.gif", "images/snow3.gif"]
+        gif: ["images/snow1.gif", "images/snow2.gif", "images/snow3.gif","images/snow4.gif"]
     },
     {
         cost: 20000,
@@ -223,7 +223,7 @@ cookieItemList = [
         src: "cookies/cookie (6).png",
         pet: "cookies/pet (6).png",
         color: "yellowgreen",
-        gif: ["images/guydance1.gif", "images/guydance2.gif", "images/guydance3.gif"]
+        gif: ["images/guydance1.gif", "images/guydance2.gif", "images/guydance3.gif","images/guydance4.gif"]
     },
     {
         cost: 200000,
@@ -233,7 +233,7 @@ cookieItemList = [
         src: "cookies/cookie (7).png",
         pet: "cookies/pet (7).png",
         color: "pink",
-        gif: ["images/girldance1.gif", "images/girldance2.gif", "images/girldance3.gif"]
+        gif: ["images/girldance1.gif", "images/girldance2.gif", "images/girldance3.gif","images/girldance4.gif"]
     },
     {
         cost: 2000000,
@@ -243,7 +243,7 @@ cookieItemList = [
         src: "cookies/cookie (8).png",
         pet: "cookies/pet (8).png",
         color: "#ffd700",
-        gif: ["images/disco1.gif", "images/disco2.gif", "images/disco3.gif"]
+        gif: ["images/disco1.gif", "images/disco2.gif", "images/disco3.gif","images/disco4.gif"]
     },
     {
         cost: 20000000,
@@ -253,7 +253,7 @@ cookieItemList = [
         src: "cookies/cookie (9).png",
         pet: "cookies/pet (9).png",
         color: "orange",
-        gif: ["images/firework1.gif", "images/firework2.gif", "images/firework3.gif"]
+        gif: ["images/firework1.gif", "images/firework2.gif", "images/firework3.gif","images/firework4.gif"]
     },
     {
         cost: 200000000,
@@ -263,7 +263,7 @@ cookieItemList = [
         src: "cookies/cookie (10).png",
         pet: "cookies/pet (10).png",
         color: "violet",
-        gif: ["images/cat1.gif", "images/cat2.gif", "images/cat3.gif"]
+        gif: ["images/cat1.gif", "images/cat2.gif", "images/cat3.gif","images/cat4.gif"]
     },
 
     {
@@ -274,7 +274,7 @@ cookieItemList = [
         src: "cookies/cookie (11).png",
         pet: "cookies/pet (11).png",
         color: "orange",
-        gif: ["images/spider1.gif", "images/spider2.gif", "images/spider3.gif"]
+        gif: ["images/spider1.gif", "images/spider2.gif", "images/spider3.gif","images/spider4.gif"]
     },
     {
         cost: 20000000000,
@@ -284,7 +284,7 @@ cookieItemList = [
         src: "cookies/cookie (2).png",
         pet: "cookies/pet (2).png",
         color: "#68b9ff", // water
-        gif: ["images/squid1.gif", "images/squid2.gif", "images/squid3.gif"]
+        gif: ["images/squid1.gif", "images/squid2.gif", "images/squid3.gif","images/squid4.gif"]
     },
     {
         cost: 200000000000,
@@ -294,7 +294,7 @@ cookieItemList = [
         src: "cookies/cookie (13).png",
         pet: "cookies/pet (13).png",
         color: "#D65252",
-        gif: ["images/witch1.gif", "images/witch2.gif", "images/witch3.gif"]
+        gif: ["images/witch1.gif", "images/witch2.gif", "images/witch3.gif","images/witch4.gif"]
     },
     {
         cost: 2000000000000,
@@ -304,7 +304,7 @@ cookieItemList = [
         src: "cookies/cookie (14).png",
         pet: "cookies/pet (14).png",
         color: "#F2C5C5",
-        gif: ["images/milk1.gif", "images/milk2.gif", "images/milk3.gif"]
+        gif: ["images/milk1.gif", "images/milk2.gif", "images/milk3.gif","images/milk4.gif"]
     },
     {
         cost: 20000000000000,
@@ -314,7 +314,7 @@ cookieItemList = [
         src: "cookies/cookie (15).png",
         pet: "cookies/pet (15).png",
         color: "#A57BE3",
-        gif: ["images/moon1.gif", "images/moon2.gif", "images/moon3.gif"]
+        gif: ["images/moon1.gif", "images/moon2.gif", "images/moon3.gif","images/moon4.gif"]
     },
     {
         cost: 200000000000000,
@@ -324,7 +324,7 @@ cookieItemList = [
         src: "cookies/cookie (16).png",
         pet: "cookies/pet (16).png",
         color: "darkslateblue",
-        gif: ["images/trippy1.gif", "images/trippy2.gif", "images/trippy3.gif"]
+        gif: ["images/trippy1.gif", "images/trippy2.gif", "images/trippy3.gif","images/trippy4.gif"]
     },
     {
         cost: 2000000000000000,
@@ -334,7 +334,7 @@ cookieItemList = [
         src: "cookies/cookie (17).png",
         pet: "cookies/pet (17).png",
         color: "#FF69B4",
-        gif: ["images/love1.gif", "images/love2.gif", "images/love3.gif"]
+        gif: ["images/love1.gif", "images/love2.gif", "images/love3.gif","images/love4.gif"]
     },
     {
         cost: 20000000000000000,
@@ -354,7 +354,7 @@ cookieItemList = [
         src: "cookies/cookie (19).png",
         pet: "cookies/pet (19).png",
         color: "#eba311", 
-        gif: ["images/hell1.gif", "images/hell2.gif", "images/hell3.gif"]
+        gif: ["images/hell1.gif", "images/hell2.gif", "images/hell3.gif","images/hell4.gif"]
         },
         {
         cost: 2000000000000000000,
@@ -364,7 +364,7 @@ cookieItemList = [
         src: "cookies/cookie (20).png",
         pet: "cookies/pet (20).png",
         color: "#C70039",
-        gif: ["images/dragon1.gif", "images/dragon2.gif", "images/win.png"]
+        gif: ["images/dragon1.gif", "images/dragon2.gif","images/dragon3.gif", "images/win.png"]
     },
     {
         cost: 2000000000000000000,
@@ -374,7 +374,7 @@ cookieItemList = [
         src: "cookies/cookie (19).png",
         pet: "cookies/pet (19).png",
         color: "#C70039",
-        gif: ["images/trippy1.gif", "images/trippy2.gif", "images/win.png"]
+        gif: ["images/trippy1.gif", "images/trippy2.gif", "images/dragon2.gif","images/win.png"]
     }
     ];
 
@@ -394,7 +394,29 @@ if (localStorage.getItem("cookieItemList") != null) {
                 document.querySelector(".hiddenCookies").style.display = "flex";
             }
          }
+
+    
 	}
+    //update TV channels
+    cookieItemList[0].gif = ["images/birthday1.gif", "images/birthday2.gif", "images/birthday3.gif","images/birthday4.gif"];
+    cookieItemList[1].gif = ["images/newspaper1.gif", "images/newspaper2.gif", "images/newspaper3.gif","images/newspaper4.gif"];
+    cookieItemList[2].gif = ["images/snow1.gif", "images/snow2.gif", "images/snow3.gif","images/snow4.gif"];
+    cookieItemList[3].gif = ["images/guydance1.gif", "images/guydance2.gif", "images/guydance3.gif","images/guydance4.gif"];
+    cookieItemList[4].gif = ["images/girldance1.gif", "images/girldance2.gif", "images/girldance3.gif","images/girldance4.gif"];
+    cookieItemList[5].gif = ["images/disco1.gif", "images/disco2.gif", "images/disco3.gif","images/disco4.gif"];
+    cookieItemList[6].gif = ["images/firework1.gif", "images/firework2.gif", "images/firework3.gif","images/firework4.gif"];
+    cookieItemList[7].gif = ["images/cat1.gif", "images/cat2.gif", "images/cat3.gif","images/cat4.gif"];
+    cookieItemList[8].gif = ["images/spider1.gif", "images/spider2.gif", "images/spider3.gif","images/spider4.gif"];
+    cookieItemList[9].gif = ["images/squid1.gif", "images/squid2.gif", "images/squid3.gif","images/squid4.gif"];
+    cookieItemList[10].gif = ["images/witch1.gif", "images/witch2.gif", "images/witch3.gif","images/witch4.gif"];
+    cookieItemList[11].gif = ["images/milk1.gif", "images/milk2.gif", "images/milk3.gif","images/milk4.gif"];
+    cookieItemList[12].gif = ["images/moon1.gif", "images/moon2.gif", "images/moon3.gif","images/moon4.gif"];
+    cookieItemList[13].gif = ["images/trippy1.gif", "images/trippy2.gif", "images/trippy3.gif","images/trippy4.gif"];
+    cookieItemList[14].gif = ["images/love1.gif", "images/love2.gif", "images/love3.gif","images/love4.gif"];
+    cookieItemList[15].gif = ["images/doublejellies.png", "images/jellies.gif", "images/shame.gif"];
+    cookieItemList[16].gif = ["images/hell1.gif", "images/hell2.gif", "images/hell3.gif","images/hell4.gif"];
+    cookieItemList[17].gif = ["images/dragon1.gif", "images/dragon2.gif","images/dragon3.gif", "images/win.png"];
+    
 }
 let buyCookie = (cookieItem) => {
     //Unlock cookie images, remove question mark
@@ -539,10 +561,12 @@ let changeChannel = () => {
         } else if (channel === 2) {
             channel = 3;
         } else if (channel === 3) {
+            channel = 4;
+        } else if (channel === 4) {
             channel = 0;
         }
         //change the channel depending on the currently selected cookie
-        if (channel === 3) {
+        if (channel === 4) {
             document.querySelector("#tv").src = "images/black.gif";
         } else {
             document.querySelector("#tv").src = cookieItemList[currentCookie].gif[channel];
