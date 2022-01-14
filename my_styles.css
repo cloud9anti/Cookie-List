@@ -75,7 +75,7 @@ p {
 }
 #message1 {
     padding: 3px;
-    margin-right: 80px;
+    margin-right: 150px;
     font-size: 26px;
     font-family: 'Comic Sans MS';
     border: 2px solid red;
@@ -218,6 +218,7 @@ button {
 .buttonmedium {
     margin: 1px;
     padding: 0;
+    margin-right:100px;
     border: 10px solid black !important;
     transition: background-color .1s ease-out;
     width: 360px;
@@ -410,7 +411,7 @@ body {
 
 #channeltext {
     position:absolute; 
-    margin-left: -520px; 
+    margin-left: -600px; 
     font-family:'Comic Sans MS'; 
     transform: translateY(-16px);
 }
@@ -469,9 +470,11 @@ body {
         transform: translateY(940px) translateX(24px);
         justify-content: flex-start;
     }
-
+    .buttonmedium {
+        margin-right:0px;
+    }
     body {
-        background-color:darkmagenta;
+        background-color: darkmagenta;
     }
     .flex-container4 {
         min-width:90px;
@@ -490,6 +493,7 @@ body {
         transform: translateY(670px) translateX(-254px);
         position: absolute;
         width: 260px;
+        margin:0px;
     }
     #message2 {
         transform: translateY(670px) translateX(0px);
@@ -520,7 +524,8 @@ body {
     .hiddenCookies {
         flex-flow: wrap;
         position: absolute;
-        transform: translateY(689px) translateX(-135px);
+        justify-content:right;
+        transform: translateY(636px) translateX(-165px);
     }
     #awardnotice {
         width: 800px;
@@ -533,8 +538,8 @@ body {
         flex-flow:column;
     }
     .shopbutton > img {
-        width:40px;
-        height:40px;
+        width: 80px;
+        height: 80px;
     }
 
     .shopbutton:hover > .shopmessage {
