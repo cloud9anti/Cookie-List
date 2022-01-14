@@ -220,8 +220,8 @@ button {
     padding: 0;
     border: 10px solid black !important;
     transition: background-color .1s ease-out;
-    width: 300px;
-    height: 260px;
+    width: 360px;
+    height: 300px;
     touch-action: manipulation;
 } 
 button img {
@@ -412,7 +412,7 @@ body {
     position:absolute; 
     margin-left: -520px; 
     font-family:'Comic Sans MS'; 
-    transform: translateY(-4px);
+    transform: translateY(-16px);
 }
 
 

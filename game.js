@@ -771,7 +771,10 @@ let buyItem = (itemNumber) => {
         if (itemNumber.IDName === "#buyitem8") cookieItemList[13].background = "url(images/devil.gif)";
         if (itemNumber.IDName === "#buyitem9") cookieItemList[14].background = "url(images/love.gif)";
         if (itemNumber.IDName === "#buyitem10") cookieItemList[15].background = "url(images/money.gif)";
-        if (itemNumber.IDName === "#buyitem11") cookieItemList[16].background = "url(images/fire.gif)";
+        if (itemNumber.IDName === "#buyitem11") {
+            cookieItemList[16].background = "url(images/fire.gif)";
+            cookieItemList[17].background = "url(https://cdn.dribbble.com/users/740666/screenshots/1899051/media/5a1d9087f72588ca3a798f412274d0f8.gif)";
+        }
 
         if (itemNumber.IDName === "#buyitem6") {
             //update TV channels
