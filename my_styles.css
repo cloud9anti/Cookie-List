@@ -526,8 +526,9 @@ body {
         width: 800px;
     }
     #shop {
-        width: 85%;
-        height: 80%;
+        width: 160%;
+        height: 60%;
+
         transform: translateY(-20%);
         flex-flow:column;
     }
@@ -535,6 +536,12 @@ body {
         width:40px;
         height:40px;
     }
+
+    .shopbutton:hover > .shopmessage {
+        margin: 0 10% 0 10%;
+        top: -185px;
+    }
+
 }
 body {
     height: 100vh;
