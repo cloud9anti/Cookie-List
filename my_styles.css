@@ -12,6 +12,58 @@ p {
     font-family: 'Comic Sans MS';
 }
 
+
+#shopleft {
+    width:90%;
+}
+
+#shopright {
+
+}
+#shop {
+    display: none;
+    background-color: royalblue;
+    width: 55%;
+    height: 55%;
+    position: absolute;
+    margin: 10%;
+    border: 12px dotted yellow;
+    z-index: 1;
+    transform: translateY(-50%);
+    flex-wrap:wrap;
+}
+
+
+
+
+.shopbutton {
+    align-content: start;
+    flex-flow: wrap;
+}
+
+.shopbutton > span {
+    display: none;
+}
+
+.shopbutton:hover > .shopmessage {
+    display: inline;
+    position: absolute;
+    top: -65px;
+    left: 0;
+    right: 0;
+    
+    background-color: #4B0082;
+    color: #fff;
+    text-align: center;
+    border: 8px solid skyblue;
+    border-radius: 10px;
+    margin: 0 30% 0 30%;
+    padding:12px 0 20px 0;
+    line-height: 20px;
+
+    z-index: 2;
+}
+
 #flex-divide1 {
     display: flex;
     flex: 0 0 80%;
@@ -232,7 +284,8 @@ body {
 .flex-container2 {
     background: #C9E1F4;
     /*flex: 1 0 auto;*/
-    flex:auto;
+    flex: auto;
+    background-size: 100% 100%;
 }
 .gametitle {
     background-color: yellowgreen;
@@ -346,6 +399,7 @@ body {
     z-index: 2;
     top: 270px;
     left: 100px;
+
 }
 
 .achievementbutton:hover .tooltiptext {
@@ -471,8 +525,36 @@ body {
     #awardnotice {
         width: 800px;
     }
+    #shop {
+        width: 85%;
+        height: 80%;
+        transform: translateY(-20%);
+        flex-flow:column;
+    }
+    .shopbutton > img {
+        width:40px;
+        height:40px;
+    }
 }
 body {
     height: 100vh;
     
 }
+
+
+
+/*Game 2*/
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:12px solid black;
+    border-radius:12px;
+    margin:0 30% 0 30%;
+}
+
+    .box div {
+        width: 100px;
+        height: 100px;
+    }
