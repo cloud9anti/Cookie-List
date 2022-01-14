@@ -584,7 +584,8 @@ let changeChannel = () => {
         if (channel === 0) {
             // gamble for jellies
             if (currentCookie === 15) {
-                if (Math.random() >= .5) {
+                //increase chances of winning if treasure was purchased
+                if (Math.random() >= (.5 + .1*itemList[11].used)) {
                     //WIN! Double jellies.
                     points *= 2;
                     channel = 1;
@@ -695,22 +696,24 @@ setInterval(bonusCookies, 1000);
 //check every 20m to see if the user clicked 30,000 times.
 let cheatTimer = () => {
     recentClicks = clickAmount;
-    setTimeout(() => recentClicks = clickAmount - recentClicks, 1000 * 60 * 20); // every 20 min
+    setTimeout(() => {
+        recentClicks = clickAmount - recentClicks 
 
-    if (achievements[9] === 0 && recentClicks >= 30000) {
-        for (let i = 1; i < 11; i++) {
-            document.querySelector(`#achievement${i}`).src = "images/skull.png";
+        if (achievements[9] === 0 && recentClicks >= 30000) {
+            for (let i = 1; i < 11; i++) {
+                document.querySelector(`#achievement${i}`).src = "images/skull.png";
+            }
+            document.querySelector("#achievement10").src = "images/star.png";
+            clickValue *= .01;
+            resetClickValue *= .01;
+            document.querySelector("#awardnotice").innerText = "Congratulations on earning achievement #10!";
+            achievements[9] = 1;
+            achievements = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+            document.querySelector("#tv").src = "images/glitch.gif";
+            setTimeout(() => document.querySelector("#awardnotice").innerText = "You cheated. No more achievements for you. Enjoy the penalty.", 10000);
         }
-        document.querySelector("#achievement10").src = "images/star.png";
-        clickValue *= .01;
-        resetClickValue *= .01;
-        document.querySelector("#awardnotice").innerText = "Congratulations on earning achievement #10!";
-        achievements[9] = 1;
-        achievements = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
-        document.querySelector("#tv").src = "images/glitch.gif";
-        setTimeout(() => document.querySelector("#awardnotice").innerText = "You cheated. No more achievements for you. Enjoy the penalty.", 10000);
     }
-
+    , 1000 * 60 * 20)// finish after 20 min
 }
 setInterval(cheatTimer, 1000 * 60 * 20); // every 20 min
 
