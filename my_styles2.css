@@ -1,0 +1,99 @@
+@keyframes flash {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+    }
+
+    .flash-image {
+    /* Initially, no animation */
+    }
+
+    .flashing {
+        animation: flash 0.2s 2 60ms;
+    }
+
+        @keyframes attack {
+    0% { transform: translateY(10px); }
+    50% { transform: translateY(-30px); }
+    100% { transform: translateY(0); }
+    }
+
+    @keyframes dodge {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-70px) translateX(-40px) rotate(-10deg) scale(0.4, 0.4); }
+    100% { transform: translateY(0); }
+    }
+
+
+        .attack-image {
+    /* Initially, no animation */
+    
+    }
+
+    .attacking {
+        animation: attack 0.2s ease-out; /* Adjust the duration and timing function as needed */
+    }
+    .dodging {
+        animation: dodge .7s ease-in-out; /* Adjust the duration and timing function as needed */
+    }
+
+    body, html {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .container-fluid {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding:0px;
+    }
+    button {
+        margin:2px;
+    }
+    .header {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+    .game-container {
+      flex: 1;
+      display: flex;
+    }
+    .attack-options {
+      flex: 4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 10px;
+      background-color:aliceblue;
+      border-left: 2px solid black;
+
+    }
+    .talk-options {
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+        background-color: antiquewhite;
+      padding: 10px;
+      border-left: 2px solid black;
+      text-align: center;
+    }
+
+    .enemy {
+      flex: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      background-color: antiquewhite;
+    }
+    .shop {
+      flex: 2;
+      background-color: #eee;
+      padding: 10px;
+      border-left: 2px solid black;
+      text-align: center;
+    }

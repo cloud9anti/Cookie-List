@@ -7,114 +7,7 @@
     <title>Future Suplex Champion</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-
-    <style>
-
-        @keyframes flash {
-        0% { opacity: 1; }
-        50% { opacity: 0; }
-        100% { opacity: 1; }
-        }
-
-        .flash-image {
-        /* Initially, no animation */
-        }
-
-        .flashing {
-            animation: flash 0.2s 2 60ms;
-        }
-
-            @keyframes attack {
-        0% { transform: translateY(10px); }
-        50% { transform: translateY(-30px); }
-        100% { transform: translateY(0); }
-        }
-
-        @keyframes dodge {
-        0% { transform: translateY(20px); }
-        50% { transform: translateY(-700px) translateX(-80px) rotate(-20deg); }
-        100% { transform: translateY(0); }
-        }
-
-
-            .attack-image {
-        /* Initially, no animation */
-        }
-
-        .attacking {
-            animation: attack 0.2s ease-out; /* Adjust the duration and timing function as needed */
-        }
-        .dodging {
-            animation: dodge 1s ease-in-out; /* Adjust the duration and timing function as needed */
-        }
-
-        body, html {
-          height: 100%;
-          margin: 0;
-          padding: 0;
-        }
-        .container-fluid {
-          display: flex;
-          flex-direction: column;
-          height: 100%;
-          padding:0px;
-        }
-        button {
-            margin:2px;
-        }
-        .header {
-          background-color: #333;
-          color: white;
-          padding: 10px;
-          text-align: center;
-        }
-        .game-container {
-          flex: 1;
-          display: flex;
-        }
-        .attack-options {
-          flex: 2;
-          display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          justify-content: flex-end;
-          padding: 10px;
-          background-color:aliceblue;
-          border-left: 2px solid black;
-
-        }
-        .talk-options {
-          flex: 3;
-          display: flex;
-          flex-direction: column;
-            background-color: antiquewhite;
-          padding: 10px;
-          border-left: 2px solid black;
-        }
-        .player {
-          flex: 2;
-          display: flex;
-          align-items: flex-end;
-          justify-content: center;
-          padding: 10px;
-          background-color:aliceblue;
-        }
-        .enemy {
-          flex: 2;
-          display: flex;
-          align-items: flex-start;
-          justify-content: center;
-          padding: 10px;
-          background-color: antiquewhite;
-        }
-        .shop {
-          flex: 2;
-          background-color: #eee;
-          padding: 10px;
-          border-left: 2px solid black;
-        }
-      </style>
+    <link href="my_styles2.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -160,19 +53,22 @@
               </div>
 
           <div class="attack-options">
+            <p>Welcome, Future Sumo Champion!</p>
             <p>Your HP: 75/100 [||||||||||||||&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp]    </p>
-            <button id="attack-button" class="attack-button btn btn-success w-100">Suplex Enemy <br>Deal 10 damage</button>
-            <button id="dodge-button" class="btn btn-success w-100">Dodge (Suplex Self) <br> Avoid 10 damage</button>
-            <button class="btn btn-success w-100">Heal <br>(30 second cooldown)</button>
-            <button class="btn btn-success w-100">Run away from the fight <br> Face another foe</button>
-          </div>
-
-          <div class="player">
-
             <img id="attack-image" class="attack-image" src="sumo.png" alt="Player">
+            <button id="attack-button" class="attack-button btn btn-success w-50">Suplex Enemy <br>Deal 10 damage</button>
+            <button id="dodge-button" class="btn btn-success w-50">Dodge (Suplex Self) <br> Avoid 10 damage</button>
+            <button class="btn btn-success w-50">Heal <br>(30 second cooldown)</button>
+            <button class="btn btn-success w-50">Run away from the fight <br> Face another foe</button>
           </div>
+
+            
+
+
+
           <div class="talk-options">
-            <h3>Talk to Angry Sumo Wrestler</h3>
+            <img id="enemy-image" class="flash-image" src="sumo.png" alt="Enemy">
+            <h3>Angry Sumo Wrestler</h3>
             <p>Enemy HP: 45/70 [||||||||||||||&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp]    </p>
             <p>"Hey, intruder! Think you can run past me? <br> Maybe in your wildest dreams!"</p>
             
@@ -181,15 +77,15 @@
             <Button><i>Autistic scream</i></Button>
             <Button>Actually, I think I can run past you! <br> <i>suplex self towards exit </i></Button>
           </div>
-          <div class="enemy">
-            <img id="enemy-image" class="flash-image" src="sumo.png" alt="Enemy">
-          </div>
+
+
+
           <div class="shop">
             <h2> Anatomical Improvements</h2>
 
-            <button>Attempt to do a pushup - Improve strength <br> (10 composure)</button>
-            <button>Consume essential vitamins - Improve health<br> (15 composure)</button>
-            <button>Inject P.Z. Stimulant into veins - Increase powerzone by 5% <br> (50 composure)</button>
+            <button>Attempt to do a pushup <br> [Improve strength] <br> (10 composure)</button>
+            <button>Consume essential vitamins <br> [Improve health] <br> (15 composure)</button>
+            <button>Inject P.Z. Stimulant into veins <br> [Increase powerzone by 5%] <br> (50 composure)</button>
             <button>Take a deep breath - Heal 20% <br> (100 composure)</button>
 
           </div>
